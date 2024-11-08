@@ -1,50 +1,109 @@
-PDF to Word Converter
-This project is a Python application that converts PDF files to Word documents, preserving both text and images. It leverages PyPDF2 for text extraction, PyMuPDF (fitz) for image extraction, and python-docx for generating the Word document. This setup ensures high fidelity in transferring content from PDF to Word, making it ideal for documents with mixed text and images.
+# 📄 PDF to Word Converter
 
-Features
-Extract Text: Retrieves and organizes text from each PDF page.
-Extract Images: Captures images from the PDF, including embedded graphics, and places them in the Word document.
-Create Word Document: Generates a Word file (.docx) with extracted text and images, with each page separated and formatted appropriately.
-Installation
-Requirements
-Python 3.6+
-Required Libraries: Install the dependencies with the following command:
-bash
-Copy code
+A Python application that converts PDF files to Word documents, preserving both text and images. This tool is ideal for transferring content from PDFs with a mix of text and images into editable Word documents.
+
+## ✨ Features
+
+- 🔹 **Text Extraction**: Retrieves and organizes text content from each PDF page.
+- 🔹 **Image Extraction**: Captures embedded images from PDFs, saving them within the Word document.
+- 🔹 **Word Document Generation**: Creates a `.docx` file, formatting the extracted text and images in a readable, organized structure.
+
+---
+
+## 📦 Installation
+
+### Prerequisites
+
+Ensure you have [Python 3.6+](https://www.python.org/downloads/) installed.
+
+### Required Libraries
+
+Install dependencies using pip:
+
+```bash
 pip install PyPDF2 PyMuPDF python-docx Pillow
-Libraries Overview
-PyPDF2: Extracts text content from PDF pages.
-PyMuPDF (fitz): Extracts images from PDF pages, supporting a variety of embedded image formats.
-python-docx: Creates and formats Word documents, inserting text and images.
-Pillow (PIL): Converts images to ensure compatibility with python-docx.
-Usage
-Clone the repository or download the source code.
-Place the PDF file you want to convert in the same directory as the script.
-Run the script with:
-bash
+```
+PyPDF2: Extracts text from PDF pages.
+PyMuPDF (fitz): Extracts images from PDF pages, including complex image formats.
+python-docx: Allows creation and formatting of Word documents.
+Pillow: Converts images to compatible formats for python-docx.
+
+---
+
+# 🚀 Usage
+Steps
+
+* 1-Clone the Repository:
+
+```bash
+git clone https://github.com/your-username/pdf-to-word-converter.git
+cd pdf-to-word-converter
+```
+
+* 2-Add Your PDF:
+
+  Place the PDF file you wish to convert in the project directory.
+
+* 3-Run the Script:
+
+```bash
 Copy code
 python main.py
-The program will create an output Word document (output_word_file.docx) with the extracted content from your PDF.
-Example
-python
-Copy code
+```
+
+* 4-Result:
+
+  The program will create an output Word document (output_word_file.docx) with the extracted content.
+
+# Example Code Usage
+
+```
 # Running the conversion function
 pdf_to_word("PDF.pdf", "output_word_file.docx")
-Output
-The program saves a Word document with:
+```
 
-Page Headers: Each page from the PDF is marked and separated in the Word document.
-Images: Images are inserted in their respective positions.
-Page Breaks: Separates each page's content, matching the PDF structure.
-Code Overview
-extract_text_with_pypdf2(pdf_path): Uses PyPDF2 to extract and structure text content from the PDF.
-extract_images_with_pymupdf(pdf_path): Uses PyMuPDF to extract images, converting them to PNG format for compatibility.
-pdf_to_word(pdf_path, word_path): The main function that combines extracted text and images into a Word document.
-Error Handling
-The code uses try-except blocks to manage errors related to unsupported image formats and missing content.
-Future Enhancements
-Customizable Output: Add support for user-defined page layouts and image sizes.
-Enhanced Error Handling: Add notifications for unsupported formats or missing data.
-Metadata Extraction: Include PDF metadata (author, title, etc.) in the Word document.
-License
-This project is open-source under the MIT License. You are free to use, modify, and distribute it as long as attribution is provided.
+# 📄 Output
+Text: All text from the PDF is extracted and organized page by page.
+Images: Each image is saved and inserted in its respective location.
+Page Layout: The output Word document has page headers, images, and page breaks to mimic the PDF's original structure.
+
+# 📁 Project Structure
+
+```
+pdf-to-word-converter/
+├── main.py            # Main script for conversion
+├── README.md          # Project README
+└── requirements.txt   # List of required packages
+```
+
+# 📝 Code Overview
+
+ ` 1. extract_text_with_pypdf2(pdf_path)`
+
+ * Uses PyPDF2 to extract and organize text from each page in the PDF.
+
+ ` 2. extract_images_with_pymupdf(pdf_path)`
+
+ * Uses PyMuPDF to extract images from each page, converting them to a compatible format (PNG).
+
+ ` 3. pdf_to_word(pdf_path, word_path)`
+
+ * Combines extracted text and images into a .docx file, structuring content by page and adding page breaks.
+
+# ⚙️ Error Handling
+
+* Image Format Compatibility: Converts images to PNG format to prevent compatibility issues with python-docx.
+* Missing Content Handling: Adds page headers indicating missing text or images if any are unavailable on a page.
+  
+# 📈 Future Enhancements
+* Customizable Layout: Add options to specify page layouts and image sizes.
+* Enhanced Metadata: Capture and insert PDF metadata (author, title) in the Word document.
+* Progress Indicators: Add progress bars for large PDF files to improve user experience.
+# 📜 License
+* This project is open-source under the MIT License. Feel free to use, modify, and distribute it with proper attribution.
+
+# 💬 Contact
+For any questions or suggestions, please reach out:
+
+* Email: m90.rahmati@gmail.com
+* GitHub: @kezb90
